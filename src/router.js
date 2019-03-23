@@ -1,23 +1,39 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Vue from "vue";
+import Router from "vue-router";
+import Home from "./views/Home.vue";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: "/",
+      name: "home",
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: "/about",
+      name: "about",
+      //lazy-loading method for incorporating the view.
+      component: () => import("./views/About.vue")
+    },
+    {
+      path: "/customer",
+      name: "customer",
+      //lazy-loading method for incorporating the view.
+      component: () => import("./views/Customer.vue")
+    },
+    {
+      path: "/customer-details/:userId",
+      name: "customer-details",
+      //lazy-loading method for incorporating the view.
+      component: () => import("./views/CustomerDetails.vue")
+    },
+    {
+      path: "/customer-details/:userId/rentals",
+      name: "customer-rentals",
+      //lazy-loading method for incorporating the view.
+      component: () => import("./views/CustomerRentals.vue")
     }
   ]
-})
+});
