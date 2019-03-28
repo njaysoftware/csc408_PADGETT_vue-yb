@@ -45,7 +45,8 @@ export default {
   },
   methods: {
     read() {
-      let url = "http://csc408dev.com/api/customers/" + this.id + "/rentals";
+      let url =
+        "https://nathanielpadgett.info/api/customers/" + this.id + "/rentals";
       window.axios(url).then(({ data }) => {
         this.customer_name = data[0].name;
 

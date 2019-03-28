@@ -34,6 +34,17 @@ export default new Router({
       name: "customer-rentals",
       //lazy-loading method for incorporating the view.
       component: () => import("./views/CustomerRentals.vue")
+    },
+    {
+      path: "/movie-details/:movieId",
+      name: "movie-details",
+
+      component: () => import("./views/MovieDetails.vue")
+    },
+    {
+      path: "/movie-rentees/:movieId/rentals",
+      name: "movie-rentees",
+      component: () => import("./views/MovieRentees.vue")
     }
   ]
 });

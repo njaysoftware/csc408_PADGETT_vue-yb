@@ -1,15 +1,23 @@
 <template>
-  <div class="col-12 col-sm-4 col-md-3 thumbnail p-1">
-    <img class="img-fluid pt-1" :src="imgUrl">
-    <h1>{{ this.title }}</h1>
-    <p>rated: {{ this.rating }}</p>
+  <div class="col-12 col-sm-5 col-md-4 col-lg-3 thumbnail padding-0 hover-style">
+    <div class="m-1 divWithBorder" style="padding:0px;">
+      <img class="img-fluid p-1" :src="imgUrl">
+      <h1>{{ this.title }}</h1>
+      <p>Rated: {{ this.rating }}</p>
+      <div class="btn btn-primary button custom-hover">
+        <router-link :to="'/movie-details/' + this.id">Details</router-link>
+      </div>
+      <div class="btn btn-primary button custom-hover">
+        <router-link :to="'/movie-rentees/' + this.id + '/rentals'">Rentees</router-link>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      imgUrl: "http://nathanielpadgett.info/images/movie_" + this.id + ".jpg"
+      imgUrl: "https://nathanielpadgett.info/images/movie_" + this.id + ".jpg"
     };
   },
   methods: {},
@@ -28,11 +36,52 @@ export default {
 };
 </script>
 <style scoped lang="scss" >
-div {
+.divWithBorder {
+  background-color: white;
+  //border-style: solid;
+  border-width: 1px;
+  //border-color: gray;
+  border-radius: 12px;
+}
+
+img {
+  border-radius: 12px;
+}
+h1 {
+  margin: 10px;
+  font-size: 1.3rem;
+}
+.button {
+  margin: 10px;
   background-color: white;
   border-style: solid;
-  border-width: 1px;
-  border-color: gray;
+  border-color: grey;
+  color: grey;
+}
+
+#cursorEnter {
+  background-color: #c2c8d1;
+  border-color: black;
+}
+a {
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+  &.router-link-exact-active {
+    color: #42b983;
+  }
+}
+.padding-0 {
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+.custom-hover:hover {
+  background-color: #c2c8d1;
+  border-color: black;
+  width: 40%;
+  height: 40%;
+  color: black;
 }
 </style>
 

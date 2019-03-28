@@ -47,15 +47,13 @@ export default {
   methods: {
     read() {
       this.movies = [];
-      let url = "http://csc408dev.com/api/movies";
+      let url = "https://nathanielpadgett.info/api/movies";
       window.axios.get(url).then(({ data }) => {
         data.forEach(movie => {
           this.movies.push(new Movie(movie));
         });
       });
-    },
-    rentDVD() {},
-    rentBluray() {}
+    }
   },
   created() {
     this.read();

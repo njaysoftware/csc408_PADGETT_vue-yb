@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     read() {
-      let url = "http://csc408dev.com/api/customers/" + this.id;
+      let url = "https://nathanielpadgett.info/api/customers/" + this.id;
       window.axios.get(url).then(({ data }) => {
         this.customer = data;
       });

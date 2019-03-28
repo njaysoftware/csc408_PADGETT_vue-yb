@@ -20,7 +20,7 @@ export default {
   computed: {
     imageUrl: function() {
       return (
-        "http://csc408dev.com/images/movie_" +
+        "https://nathanielpadgett.info/images/movie_" +
         this.transaction.movie_id +
         ".jpg"
       );

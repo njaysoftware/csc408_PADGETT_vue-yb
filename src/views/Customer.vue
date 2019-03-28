@@ -46,7 +46,7 @@ export default {
     read() {
       this.customers = [];
       window.axios
-        .get("http://csc408dev.com/api/customers")
+        .get("https://nathanielpadgett.info/api/customers")
         .then(({ data }) => {
           data.forEach(customer => {
             this.customers.push(new Customer(customer));
