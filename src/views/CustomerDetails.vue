@@ -27,6 +27,7 @@ export default {
       customer: Object
     };
   },
+  name: "CustomerDetails",
   methods: {
     read() {
       let url = "https://nathanielpadgett.info/api/customers/" + this.id;
@@ -56,8 +57,7 @@ export default {
   created() {
     this.id = this.$route.params.userId;
     this.read();
-  },
-  props: ["id", "name", "email", "isAdmin", "updated_at"]
+  }
 };
 </script>
 
